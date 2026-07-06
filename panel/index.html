@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ورود به پنل | اکادمی دندان</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body class="panel-body">
+  <div class="login-wrap">
+    <div class="login-card">
+      <a href="../index.html" style="font-size:0.85rem;color:var(--gray-500)">← بازگشت به سایت</a>
+      <h1 style="margin-top:1rem">ورود به پنل</h1>
+      <p class="subtitle">مدیر (RMO) یا نویسنده تأییدشده</p>
+      <form id="loginForm">
+        <div class="form-row">
+          <label for="loginEmail">ایمیل</label>
+          <input type="email" id="loginEmail" required dir="ltr" placeholder="email@example.com" autocomplete="username" />
+        </div>
+        <div class="form-row">
+          <label for="loginPassword">رمز عبور</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">ورود</button>
+        <p style="text-align:center;margin-top:0.75rem">
+          <a href="forgot-password.html" style="font-size:0.9rem">فراموشی رمز عبور؟</a>
+        </p>
+        <p class="form-hint" id="loginFeedback" role="status"></p>
+      </form>
+      <div class="login-hint">
+        
+        <small>پس از ورود از بخش تنظیمات، رمز را تغییر دهید.</small><br />
+        <small>فراموش کردید؟ <a href="forgot-password.html">بازیابی رمز</a> 
+      </div>
+    </div>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/crypto.js"></script>
+  <script src="../js/csrf.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/api.js"></script>
+  <script>
+    if (Api.getSessionUser()) {
+      window.location.href = "dashboard.html";
+    }
+    // Rate limiting و validation
+    let loginAttempts = 0;
+    const MAX_ATTEMPTS = 5;
+    const LOCKOUT_TIME = 15 * 60 * 1000; // 15 دقیقه
+    let lockedUntil = 0;
+
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fb = document.getElementById("loginFeedback");
+      const emailInput = document.getElementById("loginEmail");
+      const passwordInput = document.getElementById("loginPassword");
+      const btn = e.target.querySelector('button[type="submit"]');
+      
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      
+      // Check rate limiting
+      if (lockedUntil > Date.now()) {
+        fb.className = "form-hint error";
+        const mins = Math.ceil((lockedUntil - Date.now()) / 60000);
+        fb.textContent = `بیش از حد تلاش کردید. لطفاً ${mins} دقیقه بعد دوباره سعی کنید.`;
+        return;
+      }
+      
+      // Frontend validation
+      if (!email || !password) {
+        fb.className = "form-hint error";
+        fb.textContent = "ایمیل و رمز عبور الزامی است.";
+        return;
+      }
+      
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        fb.className = "form-hint error";
+        fb.textContent = "ایمیل معتبر نیست.";
+        return;
+      }
+      
+      if (password.length < 6) {
+        fb.className = "form-hint error";
+        fb.textContent = "رمز عبور حداقل ۶ کاراکتر باید باشد.";
+        return;
+      }
+      
+      btn.disabled = true;
+      btn.textContent = "درحال ورود...";
+      
+      const result = await Api.login(email, password);
+      if (!result.ok) {
+        loginAttempts++;
+        if (loginAttempts >= MAX_ATTEMPTS) {
+          lockedUntil = Date.now() + LOCKOUT_TIME;
+          fb.className = "form-hint error";
+          fb.textContent = "بیش از حد تلاش کردید. اکانت برای ۱۵ دقیقه قفل شد.";
+        } else {
+          fb.className = "form-hint error";
+          fb.textContent = result.error || "اطلاعات وارد‌شده صحیح نیست.";
+        }
+        btn.disabled = false;
+        btn.textContent = "ورود";
+        return;
+      }
+      
+      loginAttempts = 0; // Reset on success
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>

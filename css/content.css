@@ -1,0 +1,445 @@
+/* محتوای پست و ویرایشگر */
+.content-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--gray-900);
+}
+
+.content-p {
+  margin-bottom: 1.25rem;
+}
+
+.content-heading {
+  margin: 2rem 0 1rem;
+  font-weight: 800;
+  color: var(--teal-900);
+}
+
+.content-quote {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-right: 4px solid var(--teal-600);
+  background: var(--mint-100);
+  border-radius: var(--radius-sm);
+}
+
+.content-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-500);
+}
+
+.content-list {
+  margin: 1rem 0 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.content-divider {
+  border: none;
+  border-top: 1px solid var(--gray-200);
+  margin: 2rem 0;
+}
+
+.content-figure {
+  margin: 1.5rem 0;
+}
+
+.content-figure img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.content-figure figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-top: 0.5rem;
+}
+
+.content-video-wrap {
+  margin: 1.5rem 0;
+}
+
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.content-video-native {
+  width: 100%;
+  max-height: 480px;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+.content-file {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.25rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+}
+
+.file-icon {
+  font-size: 1.75rem;
+}
+
+.file-meta strong {
+  display: block;
+}
+
+.file-meta span {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+/* صفحه پست */
+.post-page {
+  padding: 2rem 0 4rem;
+}
+
+.post-article {
+  max-width: 780px;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+.post-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.post-excerpt-lead {
+  font-size: 1.1rem;
+  color: var(--gray-500);
+  margin-bottom: 1rem;
+}
+
+.post-badges,
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.media-badge {
+  background: var(--mint-200);
+  color: var(--teal-900);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+.media-badge.sm {
+  font-size: 0.65rem;
+}
+
+.post-tags span {
+  font-size: 0.8rem;
+  color: var(--teal-700);
+}
+
+.post-author-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.post-author-row img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-cover {
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.post-cover img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.post-footer-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-link:hover h3 {
+  color: var(--teal-700);
+}
+
+.related-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.related-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-500);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* درس */
+.course-hero {
+  padding: 2rem 0;
+}
+
+.course-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.course-hero-img {
+  width: 100%;
+  border-radius: var(--radius);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--mint-100);
+}
+
+.course-level-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--mint-200);
+  color: var(--teal-800);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.course-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.course-chapters,
+.course-outcomes {
+  padding-right: 1.25rem;
+  color: var(--gray-700);
+}
+
+.section-posts-inline h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* کتابخانه */
+.library-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.library-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-a {
+  padding: 0 1.25rem 1rem;
+  color: var(--gray-500);
+  display: none;
+}
+
+.faq-item.open .faq-a {
+  display: block;
+}
+
+/* ویرایشگر پنل */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--mint-100);
+  border-radius: var(--radius-sm);
+}
+
+.editor-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.editor-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.editor-block {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.editor-block-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.editor-block-body {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.editor-block-body input,
+.editor-block-body textarea,
+.editor-block-body select {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: inherit;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+}
+
+.upload-ok {
+  font-size: 0.8rem;
+  color: var(--teal-800);
+  font-weight: 600;
+}
+
+.editor-preview-wrap {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 2px dashed var(--mint-300);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.editor-tab {
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.editor-tab.active {
+  background: var(--teal-700);
+  color: white;
+  border-color: var(--teal-700);
+}
+
+@media (max-width: 768px) {
+  .course-hero-grid,
+  .course-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

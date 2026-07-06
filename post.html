@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطلب | اکادمی دندان</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/content.css" />
+  <script>
+    (function() {
+      const t = localStorage.getItem("dental_theme");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="لوگوی دنتالفای" class="logo-img" />
+        <span class="logo-text"><span data-site-name>اکادمی</span> <strong data-site-name-bold>دندان</strong></span>
+      </a>
+      <a href="index.html#posts" class="btn btn-outline btn-sm">← بازگشت</a>
+    </nav>
+  </header>
+
+  <main class="post-page">
+    <div class="post-layout-container container">
+      <article class="post-article" id="postArticle">
+        <p class="loading-state">در حال بارگذاری...</p>
+      </article>
+      <div class="pdf-viewer-pane hidden" id="pdfPane">
+        <div class="pdf-pane-header">
+          <span class="pdf-pane-title">📖 پیش‌نمایش جزوه</span>
+          <button type="button" class="btn btn-sm btn-outline" id="closePdfPane">✕ بستن پیش‌نمایش</button>
+        </div>
+        <div class="pdf-pane-body">
+          <iframe id="pdfIframe" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+    <section class="container related-section hidden" id="relatedSection">
+      <h2>مطالب مرتبط</h2>
+      <div class="posts-grid" id="relatedPosts"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-powered">Powered by <strong data-powered-by>RMO</strong></p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/crypto.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/media-store.js"></script>
+  <script src="js/post-status.js"></script>
+  <script src="js/author-display.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/courses.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/post-page.js"></script>
+</body>
+</html>

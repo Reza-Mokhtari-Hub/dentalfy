@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="آکادمی آموزش دروس دندانپزشکی — یادگیری تخصصی، منابع معتبر و جامعهٔ دانشجویان" />
+  <title>آکادمی آموزشی دنتالفای | یادگیری تخصصی دندانپزشکی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/content.css" />
+  <script>
+    (function() {
+      const t = localStorage.getItem("dental_theme");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo">
+        <img src="assets/images/logo.png" alt="لوگوی دنتالفای" class="logo-img" />
+        <span class="logo-text"><span data-site-name>آکادمی آموزشی</span> <strong data-site-name-bold>دنتالفای</strong></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="منو" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#courses">دروس</a></li>
+        <li><a href="#posts">پست‌ها</a></li>
+        <li><a href="#library">کتابخانه</a></li>
+        <li><a href="#about">درباره</a></li>
+        <li><a href="#faq">سوالات</a></li>
+        <li><a href="#request">درخواست اکانت</a></li>
+        <li><a href="panel/index.html">ورود پنل</a></li>
+        <li><a href="#contact" class="btn btn-sm btn-primary">تماس</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge" data-tagline>پلتفرم آموزشی تخصصی</span>
+          <h1><span data-hero-title>یادگیری دروس دندانپزشکی،</span> <span class="gradient-text" data-hero-highlight>دقیق و حرفه‌ای</span></h1>
+          <p class="hero-lead" data-hero-lead>
+            منابع آموزشی ساختاریافته، خلاصه‌نویسی‌های کاربردی و فضایی برای اشتراک تجربه — همه در یک اکادمی مدرن برای دانشجویان و فارغ‌التحصیلان دندانپزشکی.
+          </p>
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">مشاهده دروس</a>
+            <a href="#request" class="btn btn-outline">درخواست اکانت نویسنده</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong data-stat-courses>۲۴+</strong>
+              <span>درس تخصصی</span>
+            </div>
+            <div class="stat">
+              <strong data-stat-posts>۱۲۰+</strong>
+              <span>پست آموزشی</span>
+            </div>
+            <div class="stat">
+              <strong data-stat-members>۵۰۰+</strong>
+              <span>عضو فعال</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card hero-card-main">
+            <img src="assets/images/hero-dental.jpg" alt="دانشجوی دندانپزشکی در حال مطالعه" width="520" height="400" loading="eager" />
+            <div class="hero-card-overlay">
+              <span class="live-dot"></span>
+              جلسه زنده آناتومی
+            </div>
+          </div>
+          <div class="hero-card hero-card-float">
+            <img src="assets/images/hero-tools.jpg" alt="ابزار و مدل دندان" width="180" height="140" loading="lazy" />
+            <p>آناتومی &middot; پروتز</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section courses" id="courses">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">برنامه درسی</span>
+          <h2>دروس اصلی دندانپزشکی</h2>
+          <p>مسیر یادگیری منظم از پایه تا تخصص — هر درس با منابع قابل دانلود و پست‌های مرتبط.</p>
+        </header>
+        <div class="course-grid">
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-anatomy.jpg" alt="آناتومی دهان و دندان" loading="lazy" />
+              <span class="course-level">پایه</span>
+            </div>
+            <h3>آناتومی دهان و دندان</h3>
+            <p>ساختار دندان، عصب‌ها، عروق و روابط آناتومیک برای تشخیص و درمان.</p>
+            <a href="course.html?id=anatomy" class="course-link">ورود به درس ←</a>
+          </article>
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-pathology.jpg" alt="پاتولوژی دهان" loading="lazy" />
+              <span class="course-level">بالینی</span>
+            </div>
+            <h3>پاتولوژی دهان</h3>
+            <p>ضایعات بافتی، تشخیص افتراقی و نمونه‌برداری در عمل بالینی.</p>
+            <a href="course.html?id=pathology" class="course-link">ورود به درس ←</a>
+          </article>
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-prostho.jpg" alt="پروتز دندانی" loading="lazy" />
+              <span class="course-level">عملی</span>
+            </div>
+            <h3>پروتز دندانی</h3>
+            <p>طراحی، مواد و تکنیک‌های پروتز ثابت و متحرک در کلینیک.</p>
+            <a href="course.html?id=prostho" class="course-link">ورود به درس ←</a>
+          </article>
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-endo.jpg" alt="اندودنتیکس" loading="lazy" />
+              <span class="course-level">تخصصی</span>
+            </div>
+            <h3>اندودنتیکس</h3>
+            <p>درمان ریشه، دستگاه روتاری و مدیریت دردهای پالپال.</p>
+            <a href="course.html?id=endo" class="course-link">ورود به درس ←</a>
+          </article>
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-perio.jpg" alt="پریودنتولوژی" loading="lazy" />
+              <span class="course-level">بالینی</span>
+            </div>
+            <h3>پریودنتولوژی</h3>
+            <p>بیماری‌های لثه، جراحی پریو و نگهداری طولانی‌مدت.</p>
+            <a href="course.html?id=perio" class="course-link">ورود به درس ←</a>
+          </article>
+          <article class="course-card">
+            <div class="course-thumb">
+              <img src="assets/images/course-ortho.jpg" alt="ارتودنسی" loading="lazy" />
+              <span class="course-level">تخصصی</span>
+            </div>
+            <h3>ارتودنسی</h3>
+            <p>تشخیص ناهنجاری، بیومکانیک و برنامه‌ریزی درمان ارتودنسی.</p>
+            <a href="course.html?id=ortho" class="course-link">ورود به درس ←</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="features">
+      <div class="container features-grid">
+        <div class="features-visual">
+          <img src="assets/images/features-lab.jpg" alt="آزمایشگاه دندانپزشکی" loading="lazy" />
+          <div class="features-badge">
+            <span>۹۸٪</span>
+            <small>رضایت کاربران</small>
+          </div>
+        </div>
+        <div class="features-content">
+          <span class="section-tag">چرا اکادمی دنتالفای؟</span>
+          <h2>یادگیری دقیق، چیدمان شیک</h2>
+          <ul class="feature-list">
+            <li>
+              <span class="feature-icon">📚</span>
+              <div>
+                <strong>محتوای ساختاریافته</strong>
+                <p>هر درس با فصل‌بندی واضح و لینک به پست‌های مرتبط.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🎬</span>
+              <div>
+                <strong>ویدیو، فایل و تصویر</strong>
+                <p>پست کامل با پخش ویدیو (یوتیوب، آپارات، mp4)، پیوست PDF و گالری تصویر.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">✍️</span>
+              <div>
+                <strong>پست‌گذاری با تأیید</strong>
+                <p>فقط نویسندگان تأییدشده — ویرایشگر بلوکی حرفه‌ای در پنل.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">🔒</span>
+              <div>
+                <strong>درخواست اکانت ساده</strong>
+                <p>فرم درخواست؛ پس از بررسی، دسترسی انتشار برای شما فعال می‌شود.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-icon">📱</span>
+              <div>
+                <strong>واکنش‌گرا در همه دستگاه‌ها</strong>
+                <p>مطالعه راحت روی موبایل، تبلت و دسکتاپ.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section posts" id="posts">
+      <div class="container">
+        <header class="section-header row">
+          <div>
+            <span class="section-tag">بخش پست‌ها</span>
+            <h2>آخرین مطالب آموزشی</h2>
+            <p>پست‌های منتشرشده توسط نویسندگان تأییدشده. برای انتشار مطلب، درخواست اکانت دهید.</p>
+          </div>
+          <a href="#request" class="btn btn-primary">+ درخواست اکانت نویسنده</a>
+        </header>
+
+        <div class="posts-toolbar">
+          <div class="search-wrap">
+            <input type="search" id="postSearch" placeholder="جستجو در پست‌ها..." aria-label="جستجو در پست‌ها" />
+          </div>
+          <div class="filter-chips" role="tablist" aria-label="فیلتر درس">
+            <button type="button" class="chip active" data-filter="all">همه</button>
+            <button type="button" class="chip" data-filter="anatomy">آناتومی</button>
+            <button type="button" class="chip" data-filter="pathology">پاتولوژی</button>
+            <button type="button" class="chip" data-filter="prostho">پروتز</button>
+            <button type="button" class="chip" data-filter="endo">اندو</button>
+            <button type="button" class="chip" data-filter="perio">پریو</button>
+            <button type="button" class="chip" data-filter="ortho">ارتودنسی</button>
+          </div>
+        </div>
+
+        <div class="posts-grid" id="postsGrid">
+          <!-- Posts rendered by JS -->
+        </div>
+
+        <p class="posts-note">
+          <strong>توجه:</strong> انتشار پست فقط برای کاربرانی است که اکانت نویسنده دریافت کرده‌اند.
+          <a href="#request">درخواست دسترسی</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section library" id="library">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">کتابخانه منابع</span>
+          <h2>فایل‌های آموزانی منتشرشده</h2>
+          <p>PDF، اسلاید و فایل‌های پیوست‌شده در پست‌ها — یکجا قابل دسترسی.</p>
+        </header>
+        <div class="library-grid" id="libraryList"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div>
+          <span class="section-tag">درباره اکادمی</span>
+          <h2>مرجع یادگیری دندانپزشکی</h2>
+          <p data-footer-text>
+            آموزش تخصصی دندانپزشکی برای نسل بعدی دندانپزشکان — از آناتومی پایه تا مهارت‌های بالینی و تخصصی.
+          </p>
+          <ul class="about-list">
+            <li>پست‌های چندرسانه‌ای با ویدیو و فایل</li>
+            <li>دروس ساختاریافته با سرفصل مشخص</li>
+            <li>نویسندگان تأییدشده توسط مدیر</li>
+            <li>آماده اتصال به سرور و دیتابیس</li>
+          </ul>
+        </div>
+        <div class="about-stats-card">
+          <div class="stat-box"><strong data-stat-courses>۲۴+</strong><span>درس</span></div>
+          <div class="stat-box"><strong data-stat-posts>۱۲۰+</strong><span>پست</span></div>
+          <div class="stat-box"><strong data-stat-members>۵۰۰+</strong><span>عضو</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">سوالات متداول</span>
+          <h2>پرسش‌های رایج</h2>
+        </header>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-q">چطور پست بگذارم؟ <span>+</span></button>
+            <div class="faq-a">فرم درخواست اکانت را پر کنید. پس از تأیید، از پنل «پست جدید» استفاده کنید و «ارسال برای تأیید مدیر» بزنید. تا زمانی که RMO تأیید نکند، پست روی سایت نیست.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q">رمز را فراموش کردم <span>+</span></button>
+            <div class="faq-a">از صفحه ورود پنل → «فراموشی رمز». نویسندگان: درخواست به مدیر. مدیر: بازیابی با کد امنیتی.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q">عکس کنار نامم چطور عوض می‌شود؟ <span>+</span></button>
+            <div class="faq-a">در پنل → «تنظیمات / عکس من» — عکس پروفایل آپلود کنید. کنار همه پست‌های شما نمایش داده می‌شود.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q">چه نوع ویدیویی پشتیبانی می‌شود؟ <span>+</span></button>
+            <div class="faq-a">لینک YouTube، Aparat، فایل mp4 (آپلود تا ۲۵ مگابایت) یا لینک مستقیم ویدیو.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q">فایل PDF چطور آپلود کنم؟ <span>+</span></button>
+            <div class="faq-a">در ویرایشگر پست، بلوک «فایل» اضافه کنید و PDF را انتخاب کنید. کاربران از صفحه پست یا کتابخانه دانلود می‌کنند.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-q">تفاوت مدیر و نویسنده چیست؟ <span>+</span></button>
+            <div class="faq-a">مدیر (RMO) به همه چیز دسترسی دارد. نویسنده فقط پست‌های خودش را می‌بیند و ویرایش می‌کند.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section request" id="request">
+      <div class="container request-grid">
+        <div class="request-info">
+          <span class="section-tag">درخواست اکانت</span>
+          <h2>می‌خواهید پست بگذارید؟</h2>
+          <p>
+            اگر دانشجو، استاد یا متخصص دندانپزشکی هستید و می‌خواهید مطالب آموزشی منتشر کنید، فرم زیر را پر کنید.
+            پس از بررسی درخواست، اکانت نویسنده برای شما فعال می‌شود.
+          </p>
+          <ul class="request-steps">
+            <li><span>۱</span> فرم را تکمیل کنید</li>
+            <li><span>۲</span> بررسی توسط مدیر (RMO)</li>
+            <li><span>۳</span> دریافت اکانت و شروع انتشار</li>
+          </ul>
+        </div>
+        <form class="request-form" id="requestForm" novalidate>
+          <div class="form-row">
+            <label for="fullName">نام و نام خانوادگی</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="مثال: علی محمدی" />
+          </div>
+          <div class="form-row">
+            <label for="email">ایمیل</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@email.com" dir="ltr" />
+          </div>
+          <div class="form-row">
+            <label for="university">دانشگاه / مقطع</label>
+            <input type="text" id="university" name="university" required placeholder="مثال: دکتری دندانپزشکی — دانشگاه ..." />
+          </div>
+          <div class="form-row">
+            <label for="expertise">حوزه تخصصی برای پست‌گذاری</label>
+            <select id="expertise" name="expertise" required>
+              <option value="">انتخاب کنید</option>
+              <option value="anatomy">آناتومی</option>
+              <option value="pathology">پاتولوژی</option>
+              <option value="prostho">پروتز</option>
+              <option value="endo">اندودنتیکس</option>
+              <option value="perio">پریودنتولوژی</option>
+              <option value="ortho">ارتودنسی</option>
+              <option value="other">سایر</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">توضیح کوتاه (چرا می‌خواهید نویسنده باشید؟)</label>
+            <textarea id="message" name="message" rows="4" required placeholder="تجربه، نوع مطالب و ..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">ارسال درخواست اکانت</button>
+          <p class="form-hint" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-card">
+        <div class="contact-text">
+          <h2>سوالی دارید؟</h2>
+          <p>برای همکاری، پیشنهاد درس جدید یا پشتیبانی فنی با ما در ارتباط باشید.</p>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row"><label>نام و نام خانوادگی</label><input name="name" required /></div>
+          <div class="form-row"><label>ایمیل</label><input name="email" type="email" required dir="ltr" placeholder="example@email.com" /></div>
+          <div class="form-row"><label>موضوع</label><input name="subject" required placeholder="پیشنهاد، سوال یا انتقاد" /></div>
+          <div class="form-row"><label>پیام شما</label><textarea name="message" rows="4" required placeholder="پیامتون رو اینجا بنویسید..."></textarea></div>
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary">ارسال پیام</button>
+            <a href="mailto:info@dental-academy.ir" class="btn btn-outline-light" dir="ltr" data-contact-email>info@dental-academy.ir</a>
+          </div>
+          <p class="form-hint" id="contactFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text"><span data-site-name>اکادمی</span> <strong data-site-name-bold>دنتالفای</strong></span>
+        <p data-footer-text>آموزش تخصصی دندانپزشکی برای نسل بعدی دندانپزشکان.</p>
+      </div>
+      <nav class="footer-nav" aria-label="فوتر">
+        <a href="#courses">دروس</a>
+        <a href="#posts">پست‌ها</a>
+        <a href="#request">درخواست اکانت</a>
+        <a href="panel/index.html">پنل</a>
+      </nav>
+      <p class="footer-powered">
+        Powered by <strong data-powered-by>RMO</strong> &middot; <span id="footerYear"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/crypto.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/media-store.js"></script>
+  <script src="js/post-status.js"></script>
+  <script src="js/author-display.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/courses.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/site.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

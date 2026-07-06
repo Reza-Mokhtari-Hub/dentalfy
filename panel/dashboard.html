@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل مدیریت | اکادمی دندان</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="panel.css" />
+  <link rel="stylesheet" href="../css/content.css" />
+</head>
+<body class="panel-body">
+  <header class="panel-header">
+    <div class="container panel-header-inner">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="لوگوی دنتالفای" class="logo-img" />
+        <span class="logo-text">پنل <strong data-site-name-bold>دندان</strong></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <span id="headerAvatar" class="header-avatar-wrap"></span>
+        <span class="panel-user">سلام، <strong id="userName">—</strong></span>
+        <button type="button" class="btn btn-outline btn-sm" id="logoutBtn">خروج</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="panel-layout">
+    <aside class="panel-sidebar" id="sidebar"></aside>
+    <main class="panel-main" id="panelMain"></main>
+  </div>
+
+  <div class="modal-overlay hidden" id="modal">
+    <div class="modal-box" id="modalContent"></div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/crypto.js"></script>
+  <script src="../js/csrf.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/media-store.js"></script>
+  <script src="../js/post-status.js"></script>
+  <script src="../js/author-display.js"></script>
+  <script src="../js/content.js"></script>
+  <script src="../js/courses.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="post-editor.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>
