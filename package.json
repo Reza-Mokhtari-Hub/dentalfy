@@ -1,12 +1,29 @@
 {
-  "name": "dentalfy",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Dentalfy — Dental Learning Academy",
+  "name": "dental-academy",
+  "version": "0.1.0",
+  "description": "Full Stack Dental Academy App",
+  "author": "Reza Mokhtari (Reza-Mokhtari-Hub)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reza-Mokhtari-Hub/dentalfy"
+  },
+  "main": "server/index.js",
   "scripts": {
-    "dev": "node dev-server.js",
-    "start": "node dev-server.js",
-    "build": "node -e \"console.log('Static build ready')\"",
-    "lint": "node --check dev-server.js"
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "build": "echo 'No build step required'",
+    "lint": "echo 'No lint step required'"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.1",
+    "mongodb": "^7.4.0",
+    "pg": "^8.11.2",
+    "qrcode": "^1.5.3"
   }
 }

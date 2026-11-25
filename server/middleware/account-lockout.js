@@ -106,8 +106,7 @@ async function unlockAccount(email) {
  */
 async function getAccountLockStatus(email) {
   const result = await query(
-    `SELECT locked_until, EXTRACT(EPOCH FROM (locked_until - NOW())) as remaining_seconds
-     FROM account_lockouts 
+    `SELECT locked_until FROM account_lockouts 
      WHERE email = $1 AND locked_until > NOW()`,
     [email.toLowerCase()]
   );
@@ -116,11 +115,14 @@ async function getAccountLockStatus(email) {
     return null;
   }
   
-  const remaining = Math.ceil(result.rows[0].remaining_seconds);
+  const lockedUntilStr = result.rows[0].locked_until;
+  const lockedUntilDate = new Date(lockedUntilStr);
+  const remainingSeconds = Math.max(0, Math.ceil((lockedUntilDate.getTime() - Date.now()) / 1000));
+  
   return {
-    lockedUntil: result.rows[0].locked_until,
-    remainingSeconds: remaining,
-    remainingMinutes: Math.ceil(remaining / 60),
+    lockedUntil: lockedUntilStr,
+    remainingSeconds: remainingSeconds,
+    remainingMinutes: Math.ceil(remainingSeconds / 60),
   };
 }
 

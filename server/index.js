@@ -11,19 +11,21 @@ const { initializeSchema, ensureSiteSettings, ensureAdminUser } = require('./ini
 const { verifyCSRFToken } = require('./middleware/csrf');
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 const origin = process.env.APP_ORIGIN || 'http://localhost:3000';
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false // Disable CSP so local scripts and iframe previews load correctly
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
 app.use(
   cors({
     origin: function (reqOrigin, callback) {
-      if (!reqOrigin || reqOrigin.includes('localhost') || reqOrigin.includes('127.0.0.1') || reqOrigin === origin) {
+      if (!reqOrigin || reqOrigin.includes('localhost') || reqOrigin.includes('127.0.0.1') || reqOrigin.includes('run.app') || reqOrigin === origin) {
         callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'));
+        callback(null, true);
       }
     },
     credentials: true,
@@ -41,8 +43,11 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/panel', panelRoutes);
 app.use('/api/v1/site', siteRoutes);
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, '..')));
+
 app.get('/', (req, res) => {
-  res.json({ ok: true, message: 'Dental Academy API is running.' });
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
@@ -54,7 +59,7 @@ async function start() {
   await initializeSchema();
   await ensureSiteSettings();
   await ensureAdminUser();
-  app.listen(port, () => {
+  app.listen(port, '0.0.0.0', () => {
     console.log(`Server is listening on port ${port}`);
     console.log(`Allowed origin: ${origin}`);
   });

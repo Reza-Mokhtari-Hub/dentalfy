@@ -54,7 +54,7 @@ router.post('/login', checkRateLimit, async (req, res, next) => {
       recordFailedAttempt(email);
       return res.status(423).json({ 
         ok: false, 
-        error: `حساب قفل شده است. لطفاً ${lockStatus.remainingMinutes} دقیقه بعد دوبارہ سعی کنید.`,
+        error: `حساب قفل شده است. لطفاً ${lockStatus.remainingMinutes} دقیقه بعد دوباره سعی کنید.`,
         lockedUntil: lockStatus.lockedUntil
       });
     }

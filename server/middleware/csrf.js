@@ -17,12 +17,14 @@ function generateCSRFToken() {
 
 function setCSRFToken(res) {
   const token = generateCSRFToken();
+  const req = res.req;
+  const isSecure = req && (req.secure || req.headers['x-forwarded-proto'] === 'https');
   res.cookie(CSRF_COOKIE_NAME, token, {
-    httpOnly: false, // JavaScript می‌تواند بخواند
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Lax',
+    httpOnly: false, // JavaScript can read
+    secure: !!isSecure,
+    sameSite: isSecure ? 'None' : 'Lax',
     path: '/',
-    maxAge: 1000 * 60 * 60, // 1 ساعت
+    maxAge: 1000 * 60 * 60, // 1 hour
   });
   return token;
 }

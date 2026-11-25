@@ -30,7 +30,7 @@ const DEFAULT_ADMIN = {
  
 const APP_CONFIG = {
   storageMode: "remote",
-  apiBaseUrl: "http://localhost:4000/api/v1",
+  apiBaseUrl: "/api/v1",
 };
 
 const CATEGORIES = {

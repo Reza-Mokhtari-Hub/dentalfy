@@ -1,2 +1,2 @@
-{"timestamp":"2026-07-04T20:51:37.858Z","action":"LOGIN_FAILURE","userId":"6a103125-b0d6-4a8c-a102-f9ff58ce495f","email":"rezaxa1@gmail.com","ip":"::1","details":{"success":false}}
-{"timestamp":"2026-07-04T20:51:47.245Z","action":"LOGIN_SUCCESS","userId":"6a103125-b0d6-4a8c-a102-f9ff58ce495f","email":"rezaxa1@gmail.com","ip":"::1","details":{"success":true}}
+{"timestamp":"2026-07-06T20:35:36.286Z","action":"LOGIN_FAILURE","userId":"admin-rmo-uuid","email":"admin@rmo.local","ip":"127.0.0.1","details":{"success":false}}
+{"timestamp":"2026-07-06T20:35:41.283Z","action":"LOGIN_SUCCESS","userId":"admin-rmo-uuid","email":"admin@rmo.local","ip":"127.0.0.1","details":{"success":true}}

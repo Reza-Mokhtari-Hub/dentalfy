@@ -34,7 +34,7 @@ function checkRateLimit(req, res, next) {
     const remainingTime = Math.ceil((attempt.resetTime - now) / 1000);
     return res.status(429).json({ 
       ok: false, 
-      error: `بیش از حد تلاش کردید. لطفاً ${Math.ceil(remainingTime / 60)} دقیقه بعد دوبارہ سعی کنید.`
+      error: `بیش از حد تلاش کردید. لطفاً ${Math.ceil(remainingTime / 60)} دقیقه بعد دوباره سعی کنید.`
     });
   }
   

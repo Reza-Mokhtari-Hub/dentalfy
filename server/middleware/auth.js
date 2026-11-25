@@ -4,10 +4,12 @@ const { query } = require('../db');
 const AUTH_COOKIE_NAME = 'dental_auth';
 
 function clearAuthCookie(res) {
+  const req = res.req;
+  const isSecure = req && (req.secure || req.headers['x-forwarded-proto'] === 'https');
   res.clearCookie(AUTH_COOKIE_NAME, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Lax',
+    secure: !!isSecure,
+    sameSite: isSecure ? 'None' : 'Lax',
     path: '/',
   });
 }
@@ -20,10 +22,12 @@ function signToken(payload) {
 
 function sendAuthCookie(res, user) {
   const token = signToken({ id: user.id, role: user.role });
+  const req = res.req;
+  const isSecure = req && (req.secure || req.headers['x-forwarded-proto'] === 'https');
   res.cookie(AUTH_COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Lax',
+    secure: !!isSecure,
+    sameSite: isSecure ? 'None' : 'Lax',
     path: '/',
     maxAge: 1000 * 60 * 30,
   });
